@@ -1,0 +1,102 @@
+[
+  {
+    "id": "security-map",
+    "title": "Security Map",
+    "appliesWhen": ["always"],
+    "description": "Build a shared model of the system before reviewing individual controls.",
+    "whyItMatters": "Fast-moving projects often have implicit assets and trust boundaries. A security map makes them reviewable.",
+    "mappedTemplateTags": ["Full Feature Threat Model", "Developer Security Questions"],
+    "reviewFocus": ["system summary and architecture", "assets and protected data", "users, roles, and service identities", "trust boundaries and data flows", "entry points and external dependencies", "risky features and first security questions"],
+    "expectedOutput": ["System summary", "Asset inventory", "Trust boundaries", "Entry points", "Initial risk questions"]
+  },
+  {
+    "id": "authentication",
+    "title": "Authentication Review",
+    "appliesWhen": ["auth"],
+    "description": "Review identity, login, signup, recovery, sessions, and account lifecycle.",
+    "whyItMatters": "Authentication failures can undermine every downstream authorization and data-protection control.",
+    "mappedTemplateTags": ["Login Flow Threat Model", "Signup Abuse Review", "Password Reset Design Review", "Session & Token Lifecycle Review", "MFA Decision Review", "Account Recovery Abuse Review"],
+    "reviewFocus": ["login and signup flows", "identity-provider trust", "password reset and account recovery", "session or token lifecycle", "MFA and step-up decisions", "enumeration resistance and abuse monitoring"],
+    "expectedOutput": ["Authentication state model", "Trust assumptions", "Missing controls", "Safe negative tests", "Recovery checklist"]
+  },
+  {
+    "id": "authorization",
+    "title": "Authorization Review",
+    "appliesWhen": ["roles", "dashboard", "admin panel", "api routes", "team/workspace"],
+    "description": "Define who can act on each protected object and where policy is enforced.",
+    "whyItMatters": "UI visibility is not authorization. Backend ownership and permission rules must remain explicit and testable.",
+    "mappedTemplateTags": ["RBAC Permission Matrix Generator", "Object-Level Authorization Review", "IDOR / BOLA Defensive Review", "Admin Boundary Review"],
+    "reviewFocus": ["role and permission matrix", "protected objects and ownership", "workspace and tenant scope", "backend enforcement points", "frontend-only assumptions", "admin and support boundaries", "safe allow and deny tests"],
+    "expectedOutput": ["Permission matrix", "Ownership rules", "Backend enforcement map", "Deny tests", "Priority fixes"]
+  },
+  {
+    "id": "api",
+    "title": "API Review",
+    "appliesWhen": ["api-backend", "mobile-backend", "api routes", "webhooks"],
+    "description": "Review route-level authentication, authorization, validation, limits, and response exposure.",
+    "whyItMatters": "APIs concentrate data and business operations behind interfaces that must enforce policy independently of clients.",
+    "mappedTemplateTags": ["API Endpoint Security Matrix", "Rate Limit / Abuse Review", "Error Handling Data Leakage Review", "Mass Assignment Defensive Review", "Sensitive Object Exposure Review"],
+    "reviewFocus": ["API route and method inventory", "authentication and object-level authorization", "input and field-level validation", "rate, size, and complexity limits", "error information leakage", "sensitive response fields and caching"],
+    "expectedOutput": ["Endpoint matrix", "Validation rules", "Authorization checks", "Abuse limits", "Safe API tests"]
+  },
+  {
+    "id": "business-logic",
+    "title": "Business Logic Review",
+    "appliesWhen": ["saas", "marketplace", "ecommerce", "payments", "subscriptions", "trials", "coupons", "refunds", "approvals", "invitations"],
+    "description": "Model valuable workflows, invariants, state transitions, retries, and concurrency.",
+    "whyItMatters": "A technically valid request can still violate business rules, repeat value, skip states, or create inconsistent outcomes.",
+    "mappedTemplateTags": ["Business Logic Abuse Review", "Workflow State Machine Review", "Race Condition Risk Review", "Checkout Flow Security Review", "Coupon / Credit Abuse Review", "Refund / Cancellation Abuse Review"],
+    "reviewFocus": ["valuable assets and business invariants", "workflow states and allowed transitions", "retries, duplicate actions, and idempotency", "race conditions and stale state", "payments, subscriptions, credits, or refunds", "reconciliation and recovery"],
+    "expectedOutput": ["Workflow model", "Business invariants", "Abuse cases", "Concurrency controls", "Reconciliation checklist"]
+  },
+  {
+    "id": "files",
+    "title": "Files / Uploads / Documents Review",
+    "appliesWhen": ["file upload", "documents", "exports", "media", "public sharing"],
+    "description": "Review file ingestion, processing, storage, access control, sharing, and export boundaries.",
+    "whyItMatters": "File features cross parser, storage, authorization, privacy, and availability boundaries.",
+    "mappedTemplateTags": ["File / Document Access Control Review", "Dangerous Export Review", "Sensitive Object Exposure Review"],
+    "reviewFocus": ["upload validation and processing", "document ownership and permissions", "public versus private file boundaries", "storage keys and tenant isolation", "download links, expiry, and revocation", "exports, previews, and derived files"],
+    "expectedOutput": ["File data flow", "Access rules", "Storage controls", "Safe negative tests", "Export checklist"]
+  },
+  {
+    "id": "saas",
+    "title": "SaaS / Multi-Tenant Review",
+    "appliesWhen": ["saas", "team/workspace", "organization", "company", "tenant"],
+    "description": "Trace tenant context through data, storage, jobs, search, exports, and operations.",
+    "whyItMatters": "A missing tenant boundary in one subsystem can expose data across otherwise well-isolated accounts.",
+    "mappedTemplateTags": ["Multi-Tenant Isolation Review", "Tenant-Scoped Query Review", "Cross-Tenant Export / Search Review", "Organization / Workspace Membership Review"],
+    "reviewFocus": ["tenant identity and context propagation", "tenant-scoped database queries", "search, caches, exports, and analytics", "file storage and background jobs", "team membership and invitations", "support access and cross-tenant deny tests"],
+    "expectedOutput": ["Tenant boundary map", "Isolation invariants", "Scoped-query requirements", "Cross-tenant tests", "Detection controls"]
+  },
+  {
+    "id": "admin",
+    "title": "Admin / Internal Tool Review",
+    "appliesWhen": ["admin", "support", "admin panel", "internal dashboard", "impersonation", "exports"],
+    "description": "Apply stronger controls to privileged actions, support workflows, and sensitive operational data.",
+    "whyItMatters": "Internal interfaces often combine broad authority with weaker product guardrails and limited user visibility.",
+    "mappedTemplateTags": ["Admin Panel Security Review", "User Impersonation Safety Review", "Dangerous Export Review", "Audit Logging Design Review"],
+    "reviewFocus": ["admin role separation and strong authentication", "backend authorization for privileged actions", "impersonation and support boundaries", "dangerous exports and irreversible actions", "confirmation and approval rules", "audit logging, alerts, and break-glass access"],
+    "expectedOutput": ["Admin permission model", "High-impact action controls", "Audit requirements", "Safe deny tests", "Operational checklist"]
+  },
+  {
+    "id": "ai",
+    "title": "AI Feature Review",
+    "appliesWhen": ["ai-assistant", "ai assistant", "rag", "tool calling", "document summarization", "chatbot", "automated actions"],
+    "description": "Review model trust, retrieval, sensitive context, tools, actions, and human approval.",
+    "whyItMatters": "Models process untrusted instructions and uncertain output; deterministic policy must remain outside the model.",
+    "mappedTemplateTags": ["AI Feature Threat Model", "Prompt Injection Defensive Review", "Sensitive Data Disclosure Review", "AI Agent Permission Boundary Review", "Human Approval Gate Review"],
+    "reviewFocus": ["AI data and trust boundaries", "prompt injection containment", "retrieval and tenant isolation", "sensitive context minimization", "tool permissions and authorization", "human approval for consequential actions", "output handling, retention, and monitoring"],
+    "expectedOutput": ["AI trust model", "Tool permission matrix", "Data controls", "Approval rules", "Safe robustness tests"]
+  },
+  {
+    "id": "release",
+    "title": "Release Readiness",
+    "appliesWhen": ["always"],
+    "description": "Turn all findings into priorities, owners, evidence, and an explicit production decision.",
+    "whyItMatters": "A review creates value only when unresolved risk is visible and release conditions are owned.",
+    "mappedTemplateTags": ["Pre-Release Security Review", "Production Readiness Decision", "MVP Security Baseline", "Fix Prioritization Matrix"],
+    "reviewFocus": ["complete changed attack surface", "must-have, should-have, and later controls", "developer security questions and missing evidence", "safe negative test results", "monitoring, rollback, and incident ownership", "go, conditional go, or no-go decision"],
+    "expectedOutput": ["Prioritized controls", "Open questions", "Release blockers", "Production checklist", "Release decision"]
+  }
+]

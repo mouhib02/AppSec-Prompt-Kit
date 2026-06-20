@@ -1,0 +1,74 @@
+[
+  {
+    "id": "authentication-design",
+    "title": "Authentication Design",
+    "description": "Deep prompts for login, password reset, sessions, tokens, MFA, recovery, and account lifecycle.",
+    "valueSummary": "Model authentication states, dependency trust, recovery paths, token lifecycle, and production evidence as one system.",
+    "categories": ["Authentication", "Account Security"],
+    "expectedTemplates": ["Login Flow Threat Model", "Password Reset Design Review", "Session & Token Lifecycle Review", "MFA Decision Review", "Account Recovery Abuse Review", "Signup Abuse Review", "Magic Link Security Review", "OAuth Callback Security Review", "JWT Claims Review", "Logout and Session Invalidation Review", "Device Session Management Review"]
+  },
+  {
+    "id": "authorization-design",
+    "title": "Authorization Design",
+    "description": "RBAC, permission matrices, object ownership, IDOR/BOLA prevention, files, admin boundaries, and backend enforcement.",
+    "valueSummary": "Turn product roles and ownership rules into explicit backend policy, deny rules, and safe cross-role tests.",
+    "categories": ["Authorization", "Access Control"],
+    "expectedTemplates": ["RBAC Permission Matrix Generator", "Object-Level Authorization Review", "IDOR / BOLA Defensive Review", "File / Document Access Control Review", "Admin Boundary Review", "Frontend vs Backend Authorization Review", "Team Invitation Permission Review", "Ownership Transfer Review", "Support Access Boundary Review", "Permission Regression Checklist"]
+  },
+  {
+    "id": "saas-multi-tenant",
+    "title": "SaaS / Multi-Tenant Security",
+    "description": "Tenant isolation, memberships, scoped queries, search, exports, storage boundaries, caches, jobs, and logs.",
+    "valueSummary": "Trace tenant context through every subsystem and define isolation invariants that can be verified before release.",
+    "categories": ["SaaS", "Multi-Tenant"],
+    "expectedTemplates": ["Multi-Tenant Isolation Review", "Organization / Workspace Membership Review", "Tenant-Scoped Query Review", "Cross-Tenant Export / Search Review", "Tenant-Scoped Cache Review", "Tenant-Scoped Background Jobs Review", "Tenant-Scoped Webhook Review", "Tenant-Scoped Analytics Review", "Tenant Data Deletion Review"]
+  },
+  {
+    "id": "business-logic-security",
+    "title": "Business Logic Security",
+    "description": "Abuse cases for valuable workflows, credits, refunds, state transitions, race conditions, and repeated actions.",
+    "valueSummary": "Make hidden business invariants explicit and produce controls for sequence, concurrency, retries, and reconciliation.",
+    "categories": ["Business Logic", "Workflow Security"],
+    "expectedTemplates": ["Business Logic Abuse Review", "Workflow State Machine Review", "Race Condition Risk Review", "Coupon / Credit Abuse Review", "Refund / Cancellation Abuse Review", "Invitation Abuse Review", "Approval Workflow Bypass Review", "Notification Abuse Review", "Public Sharing Logic Review", "Search and Filter Abuse Review", "Account Limit / Quota Abuse Review"]
+  },
+  {
+    "id": "payment-checkout-security",
+    "title": "Payment / Checkout Security",
+    "description": "Checkout integrity, payment webhooks, trusted prices, subscriptions, trials, entitlements, and reconciliation.",
+    "valueSummary": "Review money and entitlement flows around authoritative state, idempotency, event ordering, and operational recovery.",
+    "categories": ["Payments", "Checkout"],
+    "expectedTemplates": ["Checkout Flow Security Review", "Payment Webhook Security Review", "Price Source of Truth Review", "Subscription / Trial Abuse Review", "Invoice Generation Review", "Refund State Transition Review", "Subscription Upgrade/Downgrade Review", "Payment Retry and Duplicate Charge Review", "Trial Conversion Review"]
+  },
+  {
+    "id": "api-security-architecture",
+    "title": "API Security Architecture",
+    "description": "Endpoint matrices, abuse limits, error handling, field-level updates, object access, and sensitive response data.",
+    "valueSummary": "Produce an endpoint-by-endpoint contract for authentication, authorization, validation, exposure, limits, and evidence.",
+    "categories": ["API Security", "Integrations"],
+    "expectedTemplates": ["API Endpoint Security Matrix", "Rate Limit / Abuse Review", "Error Handling Data Leakage Review", "Mass Assignment Defensive Review", "Sensitive Object Exposure Review", "Pagination and Enumeration Review", "Bulk Action Safety Review", "GraphQL / Flexible Query Review", "Webhook Replay Resistance Review", "CORS Trust Boundary Review"]
+  },
+  {
+    "id": "admin-internal-tools",
+    "title": "Admin & Internal Tools",
+    "description": "Admin panels, impersonation, dangerous exports, support workflows, irreversible actions, and audit evidence.",
+    "valueSummary": "Apply stronger identity, authorization, approval, observability, and recovery controls to privileged operations.",
+    "categories": ["Admin Security", "Internal Tools"],
+    "expectedTemplates": ["Admin Panel Security Review", "User Impersonation Safety Review", "Dangerous Export Review", "Audit Logging Design Review", "Admin Role Separation Review", "Irreversible Action Confirmation Review", "Admin Export Data Minimization Review", "Support Ticket Data Exposure Review", "Internal Notes Visibility Review"]
+  },
+  {
+    "id": "ai-feature-security",
+    "title": "AI Feature Security",
+    "description": "AI threat models, agent permissions, prompt injection defense, sensitive data, tools, and human approval.",
+    "valueSummary": "Separate untrusted model context from deterministic policy while controlling data, tools, actions, and review gates.",
+    "categories": ["AI Security", "Agent Security"],
+    "expectedTemplates": ["AI Feature Threat Model", "AI Agent Permission Boundary Review", "Prompt Injection Defensive Review", "Sensitive Data Disclosure Review", "Human Approval Gate Review", "RAG Data Boundary Review", "Tool Calling Risk Review", "AI Output Handling Review", "AI Memory / Conversation Retention Review", "Human-in-the-Loop Approval Review", "Model Context Data Minimization Review"]
+  },
+  {
+    "id": "release-readiness",
+    "title": "Release Readiness",
+    "description": "Full feature threat modeling, implementation review, developer questions, and evidence-based production decisions.",
+    "valueSummary": "Convert security findings and open assumptions into owners, priority controls, release evidence, and an explicit verdict.",
+    "categories": ["Threat Modeling", "Release Review"],
+    "expectedTemplates": ["Full Feature Threat Model", "Pre-Release Security Review", "Developer Security Questions", "Production Readiness Decision", "MVP Security Baseline", "Startup Launch Security Review", "Security Debt Register Generator", "Fix Prioritization Matrix", "Post-Launch Monitoring Checklist"]
+  }
+]

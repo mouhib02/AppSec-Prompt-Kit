@@ -1,0 +1,113 @@
+{
+  "packId": "demo-pro-pack-not-for-sale",
+  "packName": "Demo Pro Pack — Placeholder Content Only",
+  "version": "1.0.0-demo",
+  "tier": "pro",
+  "description": "Schema and upload-flow test data. This file intentionally contains no real paid Pro Pack content.",
+  "templates": [
+    {
+      "id": "demo-authentication-review",
+      "tier": "pro",
+      "title": "Demo Authentication Review",
+      "category": "Authentication Design",
+      "difficulty": "advanced",
+      "useCase": "Test how an uploaded Pro template appears in the catalog.",
+      "description": "Placeholder content for local upload-flow testing only.",
+      "prompt": "This is a demo-only placeholder prompt. Confirm that the Pro Pack upload, catalog, detail, copy, persistence, and clear-pack flows work. Do not use this placeholder as a real security review.",
+      "expectedOutput": ["Confirmation that the demo upload flow works"],
+      "safetyNotes": ["Demo content only", "Contains no paid review methodology"],
+      "tags": ["demo", "authentication"]
+    },
+    {
+      "id": "demo-authorization-review",
+      "tier": "pro",
+      "title": "Demo Authorization Review",
+      "category": "Authorization Design",
+      "difficulty": "advanced",
+      "useCase": "Test Pro source and tier labels.",
+      "description": "Placeholder authorization card with no real paid prompt content.",
+      "prompt": "This is a demo-only placeholder prompt. Verify the Uploaded Pro Pack source label and Pro Unlocked tier state. Do not use this placeholder as a real security review.",
+      "expectedOutput": ["Visible source and tier labels"],
+      "safetyNotes": ["Demo content only", "No real authorization methodology included"],
+      "tags": ["demo", "authorization"]
+    },
+    {
+      "id": "demo-business-logic-review",
+      "tier": "pro",
+      "title": "Demo Business Logic Review",
+      "category": "Business Logic Security",
+      "difficulty": "advanced",
+      "useCase": "Test filtering of uploaded templates.",
+      "description": "Placeholder business-logic card for UI testing.",
+      "prompt": "This is a demo-only placeholder prompt. Verify that uploaded templates can be searched and filtered. Do not use this placeholder as a real security review.",
+      "expectedOutput": ["Confirmation that Pro filtering works"],
+      "safetyNotes": ["Demo content only"],
+      "tags": ["demo", "business-logic"]
+    },
+    {
+      "id": "demo-api-review",
+      "tier": "pro",
+      "title": "Demo API Architecture Review",
+      "category": "API Security Architecture",
+      "difficulty": "advanced",
+      "useCase": "Test an uploaded API category.",
+      "description": "Placeholder API card for schema validation testing.",
+      "prompt": "This is a demo-only placeholder prompt. Verify that a valid uploaded API template passes schema validation. Do not use this placeholder as a real security review.",
+      "expectedOutput": ["Confirmation that schema validation works"],
+      "safetyNotes": ["Demo content only"],
+      "tags": ["demo", "api"]
+    },
+    {
+      "id": "demo-multi-tenant-review",
+      "tier": "pro",
+      "title": "Demo Multi-Tenant Review",
+      "category": "SaaS / Multi-Tenant Security",
+      "difficulty": "advanced",
+      "useCase": "Test persistence after a page reload.",
+      "description": "Placeholder SaaS card for localStorage testing.",
+      "prompt": "This is a demo-only placeholder prompt. Verify that the uploaded pack remains available after a page reload and is stored only in localStorage.",
+      "expectedOutput": ["Confirmation that local persistence works"],
+      "safetyNotes": ["Demo content only", "No real tenant-isolation methodology included"],
+      "tags": ["demo", "saas"]
+    },
+    {
+      "id": "demo-admin-review",
+      "tier": "pro",
+      "title": "Demo Admin Tools Review",
+      "category": "Admin & Internal Tools",
+      "difficulty": "advanced",
+      "useCase": "Test the Pro template detail panel.",
+      "description": "Placeholder admin card for detail-view testing.",
+      "prompt": "This is a demo-only placeholder prompt. Open this template and verify the detail panel, expected output, safety notes, tags, and copy control.",
+      "expectedOutput": ["Confirmation that the detail view works"],
+      "safetyNotes": ["Demo content only"],
+      "tags": ["demo", "admin"]
+    },
+    {
+      "id": "demo-ai-review",
+      "tier": "pro",
+      "title": "Demo AI Feature Review",
+      "category": "AI Feature Security",
+      "difficulty": "advanced",
+      "useCase": "Test a Pro AI category without shipping paid content.",
+      "description": "Placeholder AI card for upload testing.",
+      "prompt": "This is a demo-only placeholder prompt. Confirm that the Pro UI can represent AI security content without bundling real paid prompt material.",
+      "expectedOutput": ["Confirmation that the Pro AI card renders"],
+      "safetyNotes": ["Demo content only", "No prompt-injection techniques included"],
+      "tags": ["demo", "ai"]
+    },
+    {
+      "id": "demo-release-review",
+      "tier": "pro",
+      "title": "Demo Release Review",
+      "category": "Release Readiness",
+      "difficulty": "advanced",
+      "useCase": "Test clearing an uploaded pack.",
+      "description": "Placeholder release card for lock-state testing.",
+      "prompt": "This is a demo-only placeholder prompt. Use Clear Pro Pack and verify that uploaded templates disappear and public Pro sections return to the locked state.",
+      "expectedOutput": ["Confirmation that clearing relocks Pro sections"],
+      "safetyNotes": ["Demo content only"],
+      "tags": ["demo", "release"]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+node_modules/
+dist/
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
+
+# Private paid Pro Packs - never commit real paid content
+private-pro-packs/
+*.pro.json
