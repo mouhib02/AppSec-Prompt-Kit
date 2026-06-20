@@ -1,8 +1,16 @@
-# AppSec Prompt Kit
+<p align="center">
+  <img src="public/logo.svg" width="96" alt="AppSec Prompt Kit logo">
+</p>
 
-Defensive prompt workflows for web apps, APIs, auth flows, business logic, AI features, and release readiness.
+<h1 align="center">AppSec Prompt Kit</h1>
 
-**Static App | Defensive Only | No Backend | JSON Packs | Docker Ready**
+<p align="center">
+  Defensive prompt workflows for web apps, APIs, auth flows, business logic, AI features, and release readiness.
+</p>
+
+<p align="center">
+  Static App · Defensive Only · No Backend · JSON Packs · Docker Ready
+</p>
 
 ## Project Overview
 
@@ -57,66 +65,29 @@ It contains defensive prompts for classic AppSec risks including:
 - AI data safety;
 - dependency and basic release review.
 
-Free templates live in `src/data/freeTemplates.json`.
-
 ## Pro Pack
 
 The Pro Pack is a separate `.json` file that unlocks advanced defensive AppSec review workflows inside the app.
 
 Price: **$20**
 
-It includes deeper prompts for:
+It includes deeper prompts for authentication design, authorization and RBAC, IDOR / BOLA defensive review, multi-tenant SaaS isolation, business logic abuse, payment and checkout flows, API security architecture, admin and internal tools, AI feature security, Guided Security Mode, and release readiness review.
 
-- Authentication design
-- Authorization and RBAC
-- IDOR / BOLA defensive review
-- multi-tenant SaaS isolation;
-- Business logic abuse
-- Payment and checkout flows
-- API security architecture
-- Admin and internal tools
-- AI feature security
-- Guided Security Mode
-- Release readiness review
+To buy the Pro Pack, DM me on Telegram: `@Nanodex2`
 
-### How to buy
+Accepted payment method: crypto. Payment details are shared privately after contact. No wallet address is published in this repository.
 
-Pro Pack access is handled manually.
+After payment confirmation, you receive the Pro Pack `.json` file. Upload it inside the app using **Upload Pro Pack JSON** to unlock the Pro templates locally in your browser.
 
-To buy the Pro Pack, DM me on Telegram:
-
-`@Nanodex2`
-
-Accepted payment method: crypto.
-
-Payment details are shared privately after contact. No wallet address is published in this repository.
-
-After payment confirmation, you will receive the Pro Pack `.json` file. Upload it inside the app using **Upload Pro Pack JSON** to unlock the Pro templates locally in your browser.
-
-No backend is used.  
-No account is required.  
-No license server is used.  
-The uploaded Pro Pack stays in browser `localStorage`.
+No backend is used. No account is required. No license server is used. The uploaded Pro Pack stays in browser `localStorage`.
 
 > Defensive AppSec review only. The Pro Pack does not include exploit payloads, bypass instructions, or offensive attack chains.
 
-Do not include wallet addresses in the public repository. Payment details should be shared privately after contact.
-
 ## Guided Security Mode
 
-Guided Security Mode becomes available after a valid Pro Pack is uploaded. It is intended for projects built quickly with AI coding tools, vibe-coding workflows, or fast MVP development.
+Guided Security Mode becomes available after a valid Pro Pack is uploaded. It helps turn a project into a step-by-step defensive security review when the architecture was built quickly or is still evolving.
 
-The user creates a local project profile containing the project type, stack, data sensitivity, authentication model, roles, and important features. The app then creates a relevant review path covering applicable layers such as authentication, authorization, APIs, business logic, files, SaaS isolation, administration, AI features, and release readiness.
-
-Each guided step provides:
-
-- why the layer matters;
-- when it applies;
-- mapped Pro templates;
-- a project-specific copy/paste prompt;
-- local completion tracking.
-
-The profile and progress stay in `localStorage`. Guided Mode makes no AI API calls and performs no scanning. Users can edit the profile, reset progress, or export the review plan as JSON.
+The user creates a local project profile, the app builds a relevant review path, and each step provides a project-specific prompt with local completion tracking. The profile and progress stay in `localStorage`, and Guided Mode makes no AI API calls.
 
 ## How to Run Locally
 
@@ -159,225 +130,41 @@ docker compose down
 
 ## How to Use the App
 
-### Step 1 — Open the app
+### Browse
 
-- Open the deployed site or local development URL.
-- The Free Pack loads automatically.
-- No login is required.
+Open the app and use search, category filters, difficulty filters, and tags to find the prompt you need.
 
-### Step 2 — Browse Free Templates
+### Copy
 
-- Browse defensive AppSec prompts in the catalog.
-- Filter by search text, category, difficulty, tier, or tag.
-- Open and copy any Free template directly.
+Open a template, copy the prompt, and paste it into your AI assistant with your feature details, API routes, auth flow, roles, or business logic.
 
-### Step 3 — Open a Template
+### Unlock Pro
 
-Each template includes:
+If you bought the Pro Pack, upload the `.json` file in the browser to unlock advanced templates and Guided Security Mode locally.
 
-- title;
-- category;
-- difficulty;
-- use case;
-- description;
-- prompt;
-- expected output;
-- safety notes;
-- tags.
+### Work locally
 
-### Step 4 — Copy a Prompt
+Use the generated prompts as a review checklist, a source of security questions, and a guide for release readiness.
 
-- Select **Copy Prompt**.
-- Paste the prompt into your AI assistant.
-- Replace the placeholder with project details, a feature description, API routes, an auth flow, roles and permissions, or business logic.
-- Remove real secrets, credentials, and unnecessary personal data first.
+## Local-first by design
 
-### Step 5 — Use the Output
+AppSec Prompt Kit runs as a static frontend app.
 
-Use the generated output as:
+There is no backend, no account system, no license server, and no payment processor inside the app. Free templates are included by default. Pro templates are unlocked by uploading a valid Pro Pack JSON file in the browser.
 
-- a security review checklist;
-- developer and product questions;
-- a missing-control list;
-- release-readiness notes;
-- safe negative-test planning;
-- architecture-review support.
+Uploaded Pro Pack files stay local to the browser through `localStorage`.
 
-The output improves defensive review quality but does not replace professional security testing.
+## Defensive use only
 
-### Step 6 — Unlock Pro Pack
+AppSec Prompt Kit is built for defensive application security review. It helps developers structure better security questions before release.
 
-- DM me on Telegram: `@Nanodex2`
-- Price: **$20**
-- Crypto accepted.
-- Payment details are shared privately after contact.
-- After payment confirmation, you receive the Pro Pack `.json` file.
-- Click **Upload Pro Pack JSON** inside the app.
-- Select the purchased `.json` file.
-- If valid, Pro templates and Guided Security Mode unlock locally.
-
-### Step 7 — Use Pro Templates
-
-Pro templates are deeper than Free templates. They focus on architecture, authentication, authorization, business logic, SaaS boundaries, API design, admin tooling, AI agents, and release readiness.
-
-They produce structured output such as:
-
-- trust boundaries;
-- role/permission matrices;
-- protected objects and ownership rules;
-- backend enforcement points;
-- defensive abuse cases;
-- safe negative tests;
-- release decisions;
-- must-have / should-have / later fixes.
-
-### Step 8 — Use Guided Security Mode
-
-- Guided Security Mode is available only after Pro Pack upload.
-- Create a structured project profile.
-- The app generates a relevant step-by-step review path.
-- Copy the guided prompt for each layer.
-- Mark completed steps as done.
-- Progress is stored locally.
-- Export the plan as JSON if required.
-
-### Step 9 — Clear Pro Pack
-
-- Select **Clear Pro Pack** to remove the uploaded pack from `localStorage`.
-- Pro sections and Guided Security Mode become locked again.
-- No server deletion is required because the file was never uploaded anywhere.
-
-## Pro Pack JSON Schema
-
-Example Pro Pack JSON:
-
-```json
-{
-  "packId": "appsec-pro-core-v1",
-  "packName": "AppSec Prompt Kit — Pro Core",
-  "version": "1.0.0",
-  "tier": "pro",
-  "description": "Advanced defensive AppSec prompt workflows.",
-  "templates": [
-    {
-      "id": "auth-login-flow-threat-model",
-      "tier": "pro",
-      "title": "Login Flow Threat Model",
-      "category": "Authentication Design",
-      "difficulty": "advanced",
-      "useCase": "Review a production-bound login flow.",
-      "description": "A defensive workflow for mapping login trust boundaries, account takeover risks, and release blockers.",
-      "prompt": "Act as a senior defensive application security architect...",
-      "expectedOutput": [
-        "Executive summary",
-        "Trust boundaries",
-        "Missing controls",
-        "Safe negative test cases",
-        "Release decision"
-      ],
-      "safetyNotes": [
-        "Defensive review only",
-        "No exploit payloads",
-        "No bypass instructions"
-      ],
-      "tags": ["authentication", "login", "threat-modeling"]
-    }
-  ]
-}
-```
-
-Validation rules:
-
-- pack tier must be `pro`;
-- every template tier must be `pro`;
-- template IDs must be unique;
-- all required fields must exist;
-- prompt text must be non-empty;
-- difficulty must be `basic`, `intermediate`, or `advanced`;
-- list fields must contain strings;
-- file size is limited to 2 MB;
-- malformed or invalid JSON is rejected.
-
-## Adding Free Templates
-
-Add objects matching `AppSecTemplate` to:
-
-```text
-src/data/freeTemplates.json
-```
-
-Use `"tier": "free"`. Categories and tags are discovered automatically.
-
-## Private Pro Pack Safety
-
-Never commit real Pro Pack files.
-
-Real Pro Pack files should stay in:
-
-```text
-private-pro-packs/
-```
-
-This directory is ignored by Git and excluded from Docker builds.
-
-Check before publishing:
-
-```text
-git status --short
-git status --ignored private-pro-packs
-```
-
-`private-pro-packs/` should appear as ignored. Real Pro Pack JSON files must not appear as tracked files.
-
-If the folder was accidentally tracked:
-
-```text
-git rm --cached -r private-pro-packs
-```
-
-This removes it from Git tracking but keeps the local files.
-
-The public `src/data/sampleProPack.json` contains demo-only placeholder content for testing the upload flow.
-
-## Static Deployment
-
-Run:
-
-```text
-npm run build
-```
-
-Deploy the generated `dist/` directory to any static host, or deploy the included Docker image to a container host exposing port `80`.
-
-No application server, database, account system, payment service, or environment secret is required.
-
-## Defensive-Only Safety Boundary
-
-- This project is for defensive AppSec review.
-- It does not provide exploit payloads.
-- It does not provide bypass instructions.
-- It does not provide offensive attack chains.
-- It helps developers ask better security questions before release.
-- It does not replace professional security testing.
-
-Only review projects and environments you are authorized to assess.
+It is not a scanner, exploit toolkit, bypass guide, or replacement for professional security testing. Use it only for projects and environments you are authorized to review.
 
 ## Screenshots
 
-Screenshots are not included yet. Before launch, capture real screenshots of the hero, template catalog, locked Pro section, Pro upload flow, and Guided Security Mode.
+Screenshots will be added from the real app UI before public promotion.
 
-The empty `assets/screenshots/` directory is reserved for real launch screenshots.
-
-## Quality Checks
-
-```text
-npm run build
-npm run check:pro-prompts
-```
-
-The Pro prompt quality check safely skips when no private Pro Pack exists.
-
-See [PUBLISH_CHECKLIST.md](PUBLISH_CHECKLIST.md) before pushing to GitHub.
+Do not include fake screenshots.
 
 ## License
 

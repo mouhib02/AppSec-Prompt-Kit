@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">AppSec Prompt Kit logo</title>
+  <desc id="desc">A layered defensive shield containing terminal prompt brackets and a cursor.</desc>
+  <defs>
+    <linearGradient id="panel" x1="18" y1="12" x2="110" y2="118" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111A26"/>
+      <stop offset="1" stop-color="#080D14"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="42" y1="29" x2="87" y2="101" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#90F6CD"/>
+      <stop offset="1" stop-color="#35C995"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="120" height="120" rx="26" fill="url(#panel)" stroke="#263545" stroke-width="2"/>
+  <path d="M23 36H15v18M105 36h8v18M23 92H15V74M105 92h8V74" fill="none" stroke="#42566A" stroke-width="3" stroke-linecap="round"/>
+  <path d="M64 19 99 33v27c0 23-13.4 40.2-35 49-21.6-8.8-35-26-35-49V33l35-14Z" fill="#0D1821" stroke="url(#shield)" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M64 29 88 39v20.5c0 16-8.6 28.2-24 35.5-15.4-7.3-24-19.5-24-35.5V39l24-10Z" fill="none" stroke="#284B45" stroke-width="2"/>
+  <path d="m51 51-9 10 9 10M77 51l9 10-9 10" fill="none" stroke="#91F7D0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M59 78h15" stroke="#6FA9FF" stroke-width="5" stroke-linecap="round"/>
+  <path d="M32 47h-7M103 47h-7M32 80h-7M103 80h-7" stroke="#35495B" stroke-width="2" stroke-linecap="round"/>
+</svg>
